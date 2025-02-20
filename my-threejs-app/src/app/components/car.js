@@ -5,7 +5,7 @@ import { useGLTF } from "@react-three/drei";
 import { useRef, useState, useEffect } from "react";
 
 export default function Car() {
-  const { scene } = useGLTF("/scene.gltf");
+  const { scene } = useGLTF("/car/scene.gltf");
   const carRef = useRef();
   const speed = 0.1; // Adjust speed as needed
   const rotationSpeed = 0.05; // Adjust turning speed

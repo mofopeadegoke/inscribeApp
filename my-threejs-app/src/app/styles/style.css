@@ -1,13 +1,9 @@
 body {
-    background: url(../../../public/texture.jpg);
+    background: #111;
     background-size: cover;
 }
 .homeMain {
     font-family: Arial, Helvetica, sans-serif;
-}
-.homeMain canvas {
-    margin-top: 4rem;
-    scale: 2;
 }
 .homeMain h1 {
     text-transform: uppercase;

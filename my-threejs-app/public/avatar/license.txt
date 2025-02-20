@@ -1,0 +1,11 @@
+Model Information:
+* title:	Aang - Avatar state
+* source:	https://sketchfab.com/3d-models/aang-avatar-state-39e2d6d18f434e1ead978ad709616475
+* author:	Windstride (https://sketchfab.com/redmontwheeler)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Aang - Avatar state" (https://sketchfab.com/3d-models/aang-avatar-state-39e2d6d18f434e1ead978ad709616475) by Windstride (https://sketchfab.com/redmontwheeler) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
