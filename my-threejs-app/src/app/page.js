@@ -12,7 +12,7 @@ export default function Home() {
     <div style={{ height: "100vh" }} className="homeMain">
       <Canvas camera={{ position: [10, 5, 5], fov: 45 }}>
         <ambientLight intensity={1} />
-        <directionalLight position={[5, 5, 5]} intensity={4} />
+        <directionalLight position={[5, 5, 5]} intensity={2} />
 
         {/* 3D Object */}
         <Physics gravity={[0, -9.8, 0]}>
