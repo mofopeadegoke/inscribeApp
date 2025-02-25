@@ -16,8 +16,8 @@ export default function Avatar({ position = [-0.8, -2, 0] }) {
     avatarRef.current.position.y =
       position[1] + Math.sin(clock.elapsedTime) * 0.1;
   });
-  useFrame(() => {
-    avatarRef.current.rotation.y += 0.001;
-  });
+  // useFrame(() => {
+  //   avatarRef.current.rotation.y += 0.001;
+  // });
   return <primitive object={scene} ref={avatarRef} position={position} />;
 }
