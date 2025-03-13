@@ -31,14 +31,5 @@ export default function Car() {
     };
   }, []);
 
-  // Move the car using useFrame
-  useFrame(() => {
-    if (!carRef.current) return;
-
-    if (keys["ArrowUp"]) carRef.current.position.z += speed; // Move forward
-    if (keys["ArrowDown"]) carRef.current.position.z -= speed; // Move backward
-    if (keys["ArrowLeft"]) carRef.current.rotation.y -= rotationSpeed; // Turn left
-    if (keys["ArrowRight"]) carRef.current.rotation.y += rotationSpeed; // Turn right
-  });
   return <primitive object={scene} ref={carRef} />;
 }

@@ -8,42 +8,55 @@ import { Physics } from "@react-three/rapier";
 import Wardrobe from "./components/propOne";
 import Car from "./components/car";
 import CubeComponent from "./components/cube";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css/bundle";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-// import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import Glass from "./components/glass";
+import Btn from "./components/btn";
+import BtnColor from "./components/btnColor";
+import google from "../../public/google.png";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div style={{ height: "100vh" }} className="homeMain">
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        <SwiperSlide>
-          <img src="/texture.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/texture.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/texture.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/texture.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/texture.jpg" alt="" />
-        </SwiperSlide>
-      </Swiper>
+    <div className="homeMain">
+      <Canvas camera={{ position: [10, 5, 5], fov: 45, zoom: 3 }}>
+        <ambientLight intensity={10} />
+        <directionalLight position={[5, 5, 5]} intensity={2} />
+
+        {/* 3D Object */}
+        <Physics gravity={[0, -9.8, 0]}>
+          <Glass position={[0, 0, 0]} />
+        </Physics>
+        <OrbitControls></OrbitControls>
+      </Canvas>
+      <div className="sectCont">
+        <section className="sect">
+          <article>
+            <h1>Create an Account</h1>
+            <p>
+              Already have an account? <Link href="/login">Login</Link>
+            </p>
+          </article>
+          <form action="">
+            <article className="row">
+              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Surname" />
+            </article>
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Enter your password" />
+            <input type="password" placeholder="Confirm Password" />
+            <BtnColor content="Create Account" />
+            <article className="row">
+              <div></div>
+              <span>or</span>
+              <div></div>
+            </article>
+            <Btn
+              content="Sign up with Google"
+              alt="Google's logo"
+              url={google}
+            />
+          </form>
+        </section>
+      </div>
     </div>
   );
 }
