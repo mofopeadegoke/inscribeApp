@@ -13,11 +13,16 @@ import Btn from "./components/btn";
 import BtnColor from "./components/btnColor";
 import google from "../../public/google.png";
 import Link from "next/link";
+import { Poppins } from "next/font/google";
+const poppins = Poppins({
+  weight: "600",
+  subsets: ["latin"],
+});
 
 export default function Home() {
   return (
-    <div className="homeMain">
-      <Canvas camera={{ position: [10, 5, 5], fov: 45, zoom: 3 }}>
+    <main className="homeMain">
+      <Canvas camera={{ position: [10, 5, 5], fov: 45, zoom: 5 }}>
         <ambientLight intensity={10} />
         <directionalLight position={[5, 5, 5]} intensity={2} />
 
@@ -25,38 +30,31 @@ export default function Home() {
         <Physics gravity={[0, -9.8, 0]}>
           <Glass position={[0, 0, 0]} />
         </Physics>
-        <OrbitControls></OrbitControls>
       </Canvas>
-      <div className="sectCont">
-        <section className="sect">
-          <article>
-            <h1>Create an Account</h1>
-            <p>
-              Already have an account? <Link href="/login">Login</Link>
-            </p>
+      <section className={poppins.className}>
+        <article className="head">
+          <h1>Create an account</h1>
+          <p>
+            Already have an account? <Link href="/login">Log in</Link>
+          </p>
+        </article>
+        <form action="">
+          <article className="row">
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Surname" />
           </article>
-          <form action="">
-            <article className="row">
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="Surname" />
-            </article>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Enter your password" />
-            <input type="password" placeholder="Confirm Password" />
-            <BtnColor content="Create Account" />
-            <article className="row">
-              <div></div>
-              <span>or</span>
-              <div></div>
-            </article>
-            <Btn
-              content="Sign up with Google"
-              alt="Google's logo"
-              url={google}
-            />
-          </form>
-        </section>
-      </div>
-    </div>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Enter your password" />
+          <input type="password" placeholder="Confirm Password" />
+          <BtnColor content="Create Account" />
+          <article className="row">
+            <div></div>
+            <span>or</span>
+            <div></div>
+          </article>
+          <Btn content="Sign up with Google" alt="Google's logo" url={google} />
+        </form>
+      </section>
+    </main>
   );
 }
